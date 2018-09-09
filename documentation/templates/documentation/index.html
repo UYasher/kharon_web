@@ -1,10 +1,49 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-red.css' %}">
+
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"
+    >
+    </script>
 </head>
 <body>
-This is working
+    <div class="wave-container">
+        <div id="wave-one">
+            <div class="wave"></div>
+            <div class="wave-block"></div>
+        </div>
+        <div id="wave-two">
+            <div class="wave"></div>
+            <div class="wave-block"></div>
+        </div>
+    </div>
+    <div class="bg-secondary text-light" style="width: 100vw; height: 70vh;">
+        <div class="container">
+            <br>
+            <div class="arvo display-1" style="color:#dc3545;">Kharon</div>
+            <div class="h2">From the pythonic land of the living to the dead C</div>
+        </div>
+    </div>
+<script>
+    function move(id, a, b, c){
+        let t = Date.now()*a + b;
+        //console.log('x: ' + c*Math.cos(t));
+        $("#"+id).css({ left: c*Math.cos(t)});
+        $("#"+id).css({ top: c*Math.sin(t)});
+    }
+    //offset = Math.random();
+    offset = 0.8384172767253557
+    setInterval( function() {move("wave-one", 0.001, 0, 10);}, 1000/600);
+    setInterval( function() {move("wave-two", 0.001*(0.5+offset), 0, 20);}, 1000/60);
+</script>
 </body>
 </html>

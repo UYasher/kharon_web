@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo|Open+Sans');
+
+.arvo{
+    font-family: 'Arvo', serif !important;
+}
+
+.open-sans{
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Arvo', serif;
+}
+
+body{
+    margin: 0px;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Start Wave Styles */
+.wave{
+  background:;
+  height: 50px;
+  position: relative;
+}
+
+.wave::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat-x;
+  height: 20px;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle at 20px -10px, transparent 24px, white 26px);
+}
+.wave::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat-x;
+  height: 30px;
+  background-size: 80px 40px;
+  background-image: radial-gradient(circle at 20px 30px, white 24px, transparent 26px);
+}
+
+.wave-container{
+    position: absolute;
+    top: 60vh;
+    left: -5vw;
+    width: 120vw;
+    transform(360);
+}
+
+#wave-one{
+    position: absolute;
+    top: 0px;
+    width:120vw;
+}
+
+#wave-two{
+    position: absolute;
+    top: 0px;
+    width:120vw;
+}
+
+.wave-block{
+    position: absolute;
+    width:120vw;
+    height: 60px;
+    top: 50px;
+    background-color: white;
+}
+
+/* End Wave Styles */
+
+.dark{
+    background-color: #000;
+    color: #fff;
+}
