@@ -14,6 +14,9 @@
         crossorigin="anonymous"
     >
     </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="true">
 </head>
 <body>
     <div class="wave-container">
@@ -26,24 +29,125 @@
             <div class="wave-block"></div>
         </div>
     </div>
+
+    <div class="kontainer">
+        <div class="boat"></div>
+        <div class="triangle"></div>
+        <div class="circle"></div>
+    </div>
+
     <div class="bg-secondary text-light" style="width: 100vw; height: 70vh;">
         <div class="container">
             <br>
             <div class="arvo display-1" style="color:#dc3545;">Kharon</div>
-            <div class="h2">From the pythonic land of the living to the dead C</div>
+            <div class="h2">A batteries-included Hardware/IoT Development framework for python</div>
+            <div>
+                <br>
+                <button class="btn btn-primary btn-md">Get Started</button>
+            </div>
         </div>
     </div>
-<script>
-    function move(id, a, b, c){
-        let t = Date.now()*a + b;
-        //console.log('x: ' + c*Math.cos(t));
-        $("#"+id).css({ left: c*Math.cos(t)});
-        $("#"+id).css({ top: c*Math.sin(t)});
-    }
-    //offset = Math.random();
-    offset = 0.8384172767253557
-    setInterval( function() {move("wave-one", 0.001, 0, 10);}, 1000/600);
-    setInterval( function() {move("wave-two", 0.001*(0.5+offset), 0, 20);}, 1000/60);
-</script>
+    <div id="content">
+        <div class="container" style="margin-top:5vh;">
+            <div class="row">
+                <div class="col-8">
+                    <h1>What is Kharon?</h1>
+                    <h5>An escape from Hardware Hell</h5>
+                    <p>
+                        <b>Can you imagine a world where every time you wanted to connect to a server,
+                            you had to write your own IP protocol?</b> It would be a huge hassle for the developers,
+                        there would be an enormous chance that you might never be able to connect,
+                        and the system would have inefficiencies and vulnerabilities galore. It would be a veritable
+                        <b>Hell.</b>
+                    </p>
+                    <p>
+                        <b>And yet, that's what most hackers and devs accept </b> when they engage in hardware and IoT development.
+                        They're programming across platforms, with few or little standards and plenty of scope for error.
+                        <b>We fix that problem by taking care of hardware communication for you, simplifying your whole code base to python, and introducing a ton of efficiencies along the way.</b>
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <h1>Why Should I Use It?</h1>
+                    <h5>There's a Cost to Chaos</h5>
+                    <p>
+                        By the end of 2018, the global IoT market will be worth <b>$1.4 Trillion dollars</b>. These
+                        devices will be embedded in our homes, our cars, and our way of life. The market for hardware
+                        based technology in general will be even larger. So when that technology messes up, the impact
+                        will be equally large. In order to prevent such problems, we need systems that minimize points
+                        of failure. <b>As such, simplifying technologies like Kharon can save money and lives.</b>
+                    </p>
+                    <p><b>But the benefits are even more obvious if you are a developer. By abstracting away the hardest
+                        part of hardware programming, your life becomes that much easier.</b> After all, Kharon's made
+                        by devs, for devs.
+                    </p>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <h1>Learn More</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>How Does it Work?</h2>
+                            <h5>Written in Python, compiled to C, powered by Souls</h5>
+                            <p>
+                                Learn more about the underlying structure of Kharon →
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>What's with the Name?</h2>
+                            <h5>From the pythonic land of the living to the dead C</h5>
+                            <p>
+                                Learn more about who we are and the philosophy behind Kharon →
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-flex">
+        <div class="row text-center bg-secondary text-light">
+            <div class="col-12">
+                <br>
+                <h1>Let's Get Started!</h1>
+                <h5>Jump on our Docs, install Kharon, and build the Future</h5>
+                <p>
+                    <br>
+                    <button class="btn btn-primary btn-lg">
+                        Embark!
+                    </button>
+                </p>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function move(id, a, b, c){
+            let t = Date.now()*a + b;
+            //console.log('x: ' + c*Math.cos(t));
+            $("#"+id).css({ left: c*Math.cos(t)});
+            $("#"+id).css({ top: c*Math.sin(t)});
+        }
+        //offset = Math.random();
+        offset = 0.8384172767253557
+        setInterval( function() {move("wave-one", 0.001, 0, 10);}, 1000/600);
+        setInterval( function() {move("wave-two", 0.001*(0.5+offset), 0, 20);}, 1000/60);
+    </script>
 </body>
 </html>
