@@ -1,24 +1,8 @@
+{% extends 'documentation/base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-red.css' %}">
-
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"
-    >
-    </script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="HandheldFriendly" content="true">
-</head>
-<body>
+{% block body %}
     <div class="wave-container">
         <div id="wave-one">
             <div class="wave"></div>
@@ -34,6 +18,7 @@
         <div class="boat"></div>
         <div class="triangle"></div>
         <div class="circle"></div>
+        <div class="staff"></div>
     </div>
 
     <div class="bg-secondary text-light" style="width: 100vw; height: 70vh;">
@@ -81,7 +66,7 @@
                     </p>
                     <p><b>But the benefits are even more obvious if you are a developer. By abstracting away the hardest
                         part of hardware programming, your life becomes that much easier.</b> After all, Kharon's made
-                        by devs, for devs.
+                        by devs, for devs. As a result it's intuitive and makes it east to teach newer programmers IoT too!
                     </p>
                     <br>
                 </div>
@@ -98,7 +83,7 @@
                             <h2>How Does it Work?</h2>
                             <h5>Written in Python, compiled to C, powered by Souls</h5>
                             <p>
-                                Learn more about the underlying structure of Kharon →
+                                <a href="{% url 'how' %}">Learn more about the underlying structure of Kharon →</a>
                             </p>
                         </div>
                     </div>
@@ -110,7 +95,7 @@
                             <h2>What's with the Name?</h2>
                             <h5>From the pythonic land of the living to the dead C</h5>
                             <p>
-                                Learn more about who we are and the philosophy behind Kharon →
+                                <a href="{% url 'about' %}">Learn more about who Kharon was and the philosophy behind this project →</a>
                             </p>
                         </div>
                     </div>
@@ -149,5 +134,4 @@
         setInterval( function() {move("wave-one", 0.001, 0, 10);}, 1000/600);
         setInterval( function() {move("wave-two", 0.001*(0.5+offset), 0, 20);}, 1000/60);
     </script>
-</body>
-</html>
+{% endblock body %}

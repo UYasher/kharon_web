@@ -1,0 +1,18 @@
+{% extends 'documentation/base.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div class="bg-secondary text-light" style="width: 100vw; height: 40vh;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12"><br><a href="{% url 'index' %}">←Home</a></div>
+            </div>
+            <br>
+            <div class="arvo display-3" style="color:#dc3545;">{% block header %}{% endblock header %}</div>
+            <div class="h2">{% block subheader %}{% endblock subheader %}</div>
+        </div>
+    </div>
+    {% block article %}
+    {% endblock article %}
+{% endblock body %}

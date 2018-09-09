@@ -1,0 +1,29 @@
+{% extends 'documentation/front-base.html' %}
+
+{% block header %}How Does it Work?{% endblock header %}
+{% block subheader %}Written in Python, compiled to C, powered by Souls{% endblock subheader %}
+{% block article %}
+    <div class="container" style="margin-top:15vh;">
+    <div class="row">
+        <div class="col-8">
+            <h1>The Process</h1>
+            <h5>An Overview</h5>
+            <p>
+                The first thing a Kharon program does is compile the user-generated functions into code for the Arduino. The details of this are a bit messy, but the essence of it is that we know we are already operating with a relatively limited instruction set; there would be no point writing a compiler for code that an Arduino couldn't run anyway.
+            </p>
+            <p>
+                As such, much of our compiler uses regexes to modify python syntax into valid C syntax, without making significant changes to the overall flow of the code.
+            </p>
+            <p>
+                One of the major changes we do make is the implementation of serial communication. Anyone who has used an Arduino knows how much of a mess it is to set up serial communications. So, we abstracted that away from the user, instead implementing our own method of communication between Arduino and master device.
+            </p>
+            <p>
+                This method essentially maps each user-generated function to a 16-bit integer, so that the Arduino calls that function only when sent the corresponding integer. Then the input necessary for that function is sent over serial (currently only numbers are supported), and the Arduino can use this input, without the user ever needing to type, or even think, "Serial.read". With this input, the function can go on its merry way, sending data back to the master if the user desires.
+            </p>
+            <p>
+                So now, we have the .ino file for the Arduino, and we have established a method of communications. All that's left now is to upload the .ino file and run the programs on both devices. We use the Arduino IDE, a necessary dependency, to compile and upload the .ino file to the Arduino, but all of this is done through command line scripts and users will never have to open the IDE or gaze at its garish off-green color to use an Arduino.
+            </p>
+            <br>
+        </div>
+    </div>
+{% endblock article %}
